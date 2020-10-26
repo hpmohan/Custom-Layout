@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Layout Section</masterLabel>
+    <description>To View, Edit and Update a record with with a subset of fields.</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property 
+                label="Object API Name" 
+                name="objectToUpdate"  
+                type="String"  
+                default="Account"
+                required="true"
+                description="API name of the object that is queried/updated."/>
+            <property 
+                label="Record Id can be found at" 
+                name="recordIdField"  
+                type="String"  
+                default="Id"
+                required="true"
+                description="Record Id value of the record to be updated/viewed must be specified here. (Eg. 'AccountId' will be specified to show account details from Contact.)"/>
+            <property 
+                label="Fields to Query" 
+                name="fieldsToUpdateString"  
+                type="String" 
+                default="Name"
+                required="true"
+                description="Specify comma separated fields that should appear on the screen."/> 
+            <property 
+                label="Mode" 
+                name="mode"  
+                type="String"  
+                datasource="view, edit, readonly" 
+                default="view"
+                description="Select one of the options to view component in Read-Only or Edit or View mode."/>
+            <property 
+                label="Columns" 
+                name="columns"  
+                type="String"  
+                datasource="1,2" 
+                default="1"
+                description="Specify columns"/>
+            <property 
+                label="Title" 
+                name="title"  
+                type="String" 
+                description="Title of the card."/>
+            <property 
+                label="SLDS Styles" 
+                name="styles"  
+                type="String" 
+                default="slds-p-around_x-small"
+                description="add SLDS classes to style the outer element."/> <!--required="true" default="Id,Name"-->
+            <property 
+                label="Icon" 
+                name="iconName"  
+                type="String"
+                default="standard:user"
+                description="Specify icon name (Eg. standard:user)"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,16 @@
+<template>
+    <template if:true={recordIdToUpdate}>
+            <lightning-card title={title} icon-name={iconName} >
+                <div class={styles}>
+                    <lightning-record-form
+                        record-id={recordIdToUpdate}
+                        object-api-name={objectToUpdate}
+                        fields={fieldsToUpdate}
+                        columns={columns}
+                        mode={mode}
+                        onsubmit={handleSubmit}>    
+                    </lightning-record-form>
+                </div>
+            </lightning-card>
+    </template>
+</template>
